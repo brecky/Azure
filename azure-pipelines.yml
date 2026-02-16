@@ -62,4 +62,9 @@ stages:
           - script: docker logout
             displayName: Docker Logout (Self-hosted only)
             condition: ne(variables['Agent.OS'], 'Windows_NT')
-
+ # -task: AzureCLI@2
+        #inputs:
+        #  azureSubscription: 'Azure Brecky(31d4156c-b67a-4b74-b11f-2f866af78503)'
+        #  scriptType: 'batch'
+        #  scriptLocation: 'scriptPath'
+        #  scriptPath: 
