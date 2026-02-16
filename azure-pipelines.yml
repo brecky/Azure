@@ -30,7 +30,7 @@ stages:
             displayName: Docker Login
             inputs:
               command: login
-              containerRegistry: 'my-docker-registry'  # Service connection name
+              containerRegistry: 'Docker brecky'  # Service connection name
 
           - task: Docker@2
             displayName: Build Docker Image
