@@ -1,0 +1,24 @@
+# Dockerfile.base
+
+FROM node:22-alpine
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Define build arguments with default values
+ARG PORT_DEFAULT=3000
+ARG ENABLE_DEBUG_DEFAULT=false
+
+# Set environment variables using the build arguments
+ENV PORT=${PORT_DEFAULT}
+ENV ENABLE_DEBUG=${ENABLE_DEBUG_DEFAULT}
+
+# Copy package manifests and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Expose the application and debugging ports
+EXPOSE $PORT
+EXPOSE 9229
+
+# This image focuses on common steps; project-specific Dockerfiles can extend this.
